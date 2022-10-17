@@ -28,7 +28,7 @@ function countCats(arr) {
         i = pos;
       };
     }
-   
+    pos = 0;
   });
 
   return count;
