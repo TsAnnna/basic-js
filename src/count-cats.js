@@ -14,25 +14,10 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]) => 3`
  *
  */
-function countCats(arr) {
-  let count = 0;
-  let pos = 0;
-
-  arr.forEach(function(item, index, array) {
-    
-    for (let i = 0; i < item.length; i++) {
-      pos = item.indexOf('^^', pos);
-
-      if(pos > -1) {
-        count++;
-        i = pos;
-      };
-    }
-    pos = 0;
-  });
-
-  return count;
-
+ function countCats(matrix) {
+  matrix = matrix.flat(Infinity);
+  matrix = matrix.filter(el => el === "^^");
+  return matrix.length;
 }
 
 module.exports = {
